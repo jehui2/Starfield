@@ -52,8 +52,16 @@ interface Particle
   public void move();
   public void show();
 }
-class OddballParticle extends NormalParticle //uses an interface
+class OddballParticle implements Particle //uses an interface
 {
+  double myX, myY;
+  int myColor;
+  OddballParticle()
+  {
+    myX = 200;
+    myY = 200;
+    myColor = color(random(256), random(256), random(256));
+  }
   public void move()
   {
     myX++;
